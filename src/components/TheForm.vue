@@ -14,7 +14,7 @@
         <option value="google">Google</option>
         <option value="wom">Word of mouth</option>
         <option value="newspaper">NewsPaper</option>
-      </select>
+      </select> 
     </div>
     <div class="form-control">
       <h2>What are you interested in?</h2>
