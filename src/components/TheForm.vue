@@ -2,7 +2,7 @@
   <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="user-name">Your Name</label>
-      <input id="user-name" name="user-name" type="text" v-model="userName"/>
+      <input id="user-name" name="user-name" type="text" v-model="userName" />
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
@@ -14,20 +14,35 @@
         <option value="google">Google</option>
         <option value="wom">Word of mouth</option>
         <option value="newspaper">NewsPaper</option>
-      </select> 
+      </select>
     </div>
     <div class="form-control">
       <h2>What are you interested in?</h2>
       <div>
-        <input id="interest-news" name="interest" type="checkbox" v-model="interset_news" />
+        <input
+          id="interest-news"
+          name="interest"
+          type="checkbox"
+          v-model="interset_news"
+        />
         <label for="interest-news">News</label>
       </div>
       <div>
-        <input id="interest-tutorials" name="interest" type="checkbox" v-model="interset_tutorials"  />
+        <input
+          id="interest-tutorials"
+          name="interest"
+          type="checkbox"
+          v-model="interset_tutorials"
+        />
         <label for="interest-tutorials">Tutorials</label>
       </div>
       <div>
-        <input id="interest-nothing" name="interest" type="checkbox"  v-model="interset_nothing" />
+        <input
+          id="interest-nothing"
+          name="interest"
+          type="checkbox"
+          v-model="interset_nothing"
+        />
         <label for="interest-nothing">Nothing</label>
       </div>
     </div>
@@ -44,7 +59,7 @@
       <div>
         <input id="how-other" name="how" type="radio" />
         <label for="how-other">Other</label>
-      </div> 
+      </div>
     </div>
     <div>
       <button>Save Data</button>
@@ -54,29 +69,27 @@
 
 <script>
 export default {
-  data(){
-    return{
-      userName : '',
-      userAge : null , // type of it >> number 
-      refer : '',
+  data() {
+    return {
+      userName: '',
+      userAge: null, // type of it >> numbersssss
+      refer: '',
       interset_news: '',
-      interset_tutorials : '',
+      interset_tutorials: '',
       interset_nothing: '',
-
     };
   },
-  methods:{
-    submitForm(){
+  methods: {
+    submitForm() {
       console.log(`username ${this.userName}`);
       console.log(`userAge ${this.userAge}`);
       console.log(`refer ${this.refer}`);
       console.log(`interset_news ${this.interset_news}`);
       console.log(`interset_tutorials ${this.interset_tutorials}`);
       console.log(`interset_nothing ${this.interset_nothing}`);
-
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
