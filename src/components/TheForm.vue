@@ -44,7 +44,7 @@
       <div>
         <input id="how-other" name="how" type="radio" />
         <label for="how-other">Other</label>
-      </div>
+      </div> 
     </div>
     <div>
       <button>Save Data</button>
