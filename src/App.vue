@@ -1,12 +1,15 @@
 <template>
   <the-form></the-form>
+  <checkout-form></checkout-form>
 </template>
 
 <script>
+import CheckoutForm from './components/CheckoutForm.vue';
 import TheForm from "./components/TheForm.vue";
 export default {
   components:{
-    TheForm
+    TheForm,
+    CheckoutForm
   }
 }
 </script>
