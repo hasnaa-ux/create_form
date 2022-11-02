@@ -7,19 +7,19 @@
         </div>
         <div class="form-control">
             <label for="lname">Last Name</label>
-            <input id="lname" name="lname" type="text" v-model="Lname" />
+            <input id="lname" name="lname" type="text"  v-model="Lname" />
         </div>        
     </div>
     <div class="form-control">
         <label for="username">UserName</label>
-        <input id="username" name="username" type="text" v-model="UserName" />
+        <input id="username" name="username" type="text" required v-model="UserName" />
     </div>
     <div class="form-control">
         <label for="password">Password</label>
-        <input id="password" name="password" type="number" v-model="PassWord" />
+        <input id="password" name="password" type="number" required v-model="PassWord" />
     </div>
     <div class="form-control">
-        <label for="email">E-mail</label>
+        <label for="email">E-mail (Optional)</label>
         <input id="email" name="email" type="email" v-model="Email" />
     </div>
     <div class="places">
@@ -86,6 +86,20 @@ export default {
 
 <style  scoped>
 
+.names,.places{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.names div{
+    width: 49%;
+}
+.places div{
+    width: 31%;
+}
+.places div select{
+    width: 100%;
+}
 form {
   margin: 2rem auto;
   max-width: 40rem;
@@ -139,7 +153,10 @@ button {
   color: white;
   cursor: pointer;
   padding: 0.75rem 2rem;
-  border-radius: 30px;
+  border-radius: 16px;
+  display: block;
+  margin: auto;
+  margin-top: 25px;
 }
 
 </style>
