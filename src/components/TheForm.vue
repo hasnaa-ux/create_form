@@ -25,7 +25,7 @@
           type="checkbox"
           v-model="interset_news"
         />
-        <label for="interest-news">Newss</label>
+        <label for="interest-news">News</label>
       </div>
       <div>
         <input
