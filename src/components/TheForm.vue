@@ -62,13 +62,15 @@
       </div>
     </div>
     <div>
-      <button>Save Data</button>
+      <base-button>Save Data</base-button>
     </div>
   </form>
 </template>
 
 <script>
+import BaseButton from './BaseButton.vue';
 export default {
+  components: { BaseButton },
   data() {
     return {
       userName: '',
@@ -139,19 +141,5 @@ input[type='radio'] + label {
   font-weight: normal;
 }
 
-button {
-  font: inherit;
-  border: 1px solid #0076bb;
-  background-color: #0076bb;
-  color: white;
-  cursor: pointer;
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-}
 
-button:hover,
-button:active {
-  border-color: #002350;
-  background-color: #002350;
-}
 </style>

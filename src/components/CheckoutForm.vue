@@ -10,9 +10,10 @@
             <input id="lname" name="lname" type="text"  v-model="Lname" />
         </div>        
     </div>
-    <div class="form-control">
+    <div class="form-control" :class="{invalid: userNameValidity === 'invalid'}">
         <label for="username">UserName</label>
-        <input id="username" name="username" type="text" required v-model="UserName" />
+        <input id="username" name="username" type="text"  v-model.trim="UserName" @blur="validInput" />
+        <p v-if="userNameValidity ==='invalid'">Please enter your a valid name </p>
     </div>
     <div class="form-control">
         <label for="password">Password</label>
@@ -50,17 +51,21 @@
             <input id="zip" name="zip" type="number" v-model="Zip" />
         </div>
     </div>
-    <div class="form-control">
+    
+        <div class="form-control">
             <country-select v-model="country" :country="country" topCountry="US" autocomplete="true" />
           <region-select v-model="region" :country="country" :region="region" autocomplete="true"/>
-    </div>
-    <button>Continue to checkout</button>
+        </div>
+   
+    <base-button>Continue to checkout</base-button>
 
   </form>
 </template>
 
 <script>
+import BaseButton from './BaseButton.vue';
 export default {
+  components: { BaseButton },
     
          
 
@@ -74,22 +79,30 @@ export default {
             Country:[],
             City:[],
             Zip:null,
+            userNameValidity: 'pending',
             country: '',
             region: ''
         };
     },
     methods:{
+        validInput(){
+            if(this.UserName === ''){
+                this.userNameValidity = 'invalid'
+            }
+            else{
+                this.userNameValidity = 'valid'
+            }
+
+        },
+
         setSubmit(){
-            console.log(this.Fname);
-            console.log(this.Lname);
-            console.log(this.UserName);
-            console.log(this.PassWord);
-            console.log(this.Email);
-            console.log(this.Country);
-            console.log(this.City);
-            console.log(this.Zip);
-        }
+           
+        },
+       
+        
+        
     },
+    
 }
 </script>
 
@@ -122,8 +135,12 @@ form {
   margin: 0.5rem 0;
 }
 
+.form-control.invalid input{
+    border:1px solid red;
+}
+
 label {
-  font-weight: bold;
+  /*font-weight: bold; */
   color: white;
 }
 
@@ -138,7 +155,7 @@ select {
     width: 100%;
     font: inherit;
     margin-top: 0.5rem;
-    border: 2px solid #99999991;
+    border: none;
     height: 35px;
     border-radius: 3px;
     color: #000000db;
@@ -148,25 +165,10 @@ select {
 
 
 
-input[type='checkbox'],
-input[type='radio'] {
-  display: inline-block;
-  width: auto;
-  margin-right: 1rem;
-}
 
-input[type='checkbox'] + label,
-input[type='radio'] + label {
-  font-weight: normal;
-}
 
 button {
-  font: inherit;
-  border: 1px solid #0076bb;
   background-color: #002350;
-  color: white;
-  cursor: pointer;
-  padding: 0.75rem 2rem;
   border-radius: 23px;
   display: block;
   margin: auto;
