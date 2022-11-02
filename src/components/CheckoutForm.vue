@@ -50,6 +50,10 @@
             <input id="zip" name="zip" type="number" v-model="Zip" />
         </div>
     </div>
+    <div class="form-control">
+            <country-select v-model="country" :country="country" topCountry="US" autocomplete="true" />
+          <region-select v-model="region" :country="country" :region="region" autocomplete="true"/>
+    </div>
     <button>Continue to checkout</button>
 
   </form>
@@ -57,6 +61,9 @@
 
 <script>
 export default {
+    
+         
+
     data(){
         return{
             Fname:'',
@@ -67,6 +74,8 @@ export default {
             Country:[],
             City:[],
             Zip:null,
+            country: '',
+            region: ''
         };
     },
     methods:{
@@ -106,7 +115,7 @@ form {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 2rem;
-  background-color: #ffffff;
+  background-image: linear-gradient(#A100FFFF, #119CFDFF)
 }
 
 .form-control {
@@ -115,6 +124,7 @@ form {
 
 label {
   font-weight: bold;
+  color: white;
 }
 
 h2 {
@@ -124,15 +134,19 @@ h2 {
 
 input,
 select {
-  display: block;
-  width: 100%;
-  font: inherit;
-  margin-top: 0.5rem;
+    display: block;
+    width: 100%;
+    font: inherit;
+    margin-top: 0.5rem;
+    border: 2px solid #99999991;
+    height: 35px;
+    border-radius: 3px;
+    color: #000000db;
+    padding-left: 10px;
+    outline: 0;
 }
 
-select {
-  width: auto;
-}
+
 
 input[type='checkbox'],
 input[type='radio'] {
@@ -149,11 +163,11 @@ input[type='radio'] + label {
 button {
   font: inherit;
   border: 1px solid #0076bb;
-  background-color: #0076bb;
+  background-color: #002350;
   color: white;
   cursor: pointer;
   padding: 0.75rem 2rem;
-  border-radius: 16px;
+  border-radius: 23px;
   display: block;
   margin: auto;
   margin-top: 25px;

@@ -1,15 +1,22 @@
 <template>
   <the-form></the-form>
   <checkout-form></checkout-form>
+  
 </template>
 
 <script>
 import CheckoutForm from './components/CheckoutForm.vue';
 import TheForm from "./components/TheForm.vue";
+/*
+import Vue from 'vue';
+import vueCountryRegionSelect from '../node_modules';
+Vue.use(vueCountryRegionSelect);*/
+
 export default {
   components:{
     TheForm,
-    CheckoutForm
+    CheckoutForm,
+    
   }
 }
 </script>
