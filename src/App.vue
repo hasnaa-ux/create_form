@@ -7,10 +7,7 @@
 <script>
 import CheckoutForm from './components/CheckoutForm.vue';
 import TheForm from "./components/TheForm.vue";
-/*
-import Vue from 'vue';
-import vueCountryRegionSelect from '../node_modules';
-Vue.use(vueCountryRegionSelect);*/
+
 
 export default {
   components:{

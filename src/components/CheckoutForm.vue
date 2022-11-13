@@ -52,10 +52,10 @@
         </div>
     </div>
     
-        <div class="form-control">
-            <country-select v-model="country" :country="country" topCountry="US" autocomplete="true" />
-          <region-select v-model="region" :country="country" :region="region" autocomplete="true"/>
-        </div>
+      
+        <country-select v-model="country" :country="country" topCountry="US" autocomplete="true" />
+        <region-select v-model="region" :country="country" :region="region" autocomplete="true"/>
+        
    
     <base-button>Continue to checkout</base-button>
 
