@@ -1,16 +1,19 @@
 <template>
 
-  
+  <quote-grid :quotes="quotes"></quote-grid>
 </template>
 
 <script>
+import QuoteGrid from './components/QuoteGrid.vue';
 
 
 
 export default {
-  components:{
-
-    
+  components:{QuoteGrid  },
+  data(){
+    return{
+      quotes:['hi' , 'hello'],
+    };
   }
 }
 </script>
