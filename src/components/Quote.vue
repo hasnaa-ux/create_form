@@ -16,7 +16,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="" >
+@import "@/scss/_variables.scss";
 .panal-body{
     color: #6e6e6e;
     font-size: 24px;
