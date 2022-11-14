@@ -14,8 +14,22 @@ export default {
     return{
       quotes:['hi' , 'hello'],
     };
-  }
+  },
+  
 }
+
+module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `
+          @import "@/scss/_variables.scss";
+          @import "@/scss/_mixins.scss";
+        `
+      }
+    }
+  }
+};
 </script>
 
 <style>
